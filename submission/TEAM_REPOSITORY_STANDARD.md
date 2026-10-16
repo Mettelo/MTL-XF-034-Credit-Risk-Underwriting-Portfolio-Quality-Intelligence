@@ -24,3 +24,13 @@ Assign named people to all seven [brief roles](../project/PROJECT_BRIEF.md). Eve
 Own corrected outcome coding, cost-matrix scenarios and a policy card showing review capacity and missing modern validation evidence.
 
 Maintain D1–D12/AC1–AC12/DT1–DT10 evidence index with owner, distinct reviewer, state and final-commit path. Connect numeric claims to frozen source and code/configuration. Record all manual adjustments, excluded cases and limitations; preserve an insufficient-evidence case.
+
+## Required business-output artefacts
+
+- **D5 Corrected credit data and outcome audit:** data/curated/corrected-credit-data-and-outcome-audit.csv and docs/05-kpi-catalogue/corrected-credit-data-and-outcome-audit.md.
+- **D6 Explainable risk-screening comparison:** docs/06-analysis/explainable-risk-screening-comparison.md plus machine-readable evaluation_results.csv.
+- **D7 Three cost-sensitive referral policies:** docs/07-decision-framework/three-cost-sensitive-referral-policies.csv plus policy.md.
+- **D8 Credit-risk review dashboard:** dashboard/README.md, runnable dashboard/prototype and static review export.
+- **D11 Model-risk recommendation and validation plan:** deliverables/model-risk-recommendation-and-validation-plan.pdf plus editable slides and supporting cards/runbook.
+
+Index these under SC1–SC5 with author, distinct reviewer, executed result and final commit. Treat these paths as the default delivery contract; an equivalent tool-specific format requires an explicit documented mapping.

@@ -6,9 +6,33 @@ This is a simulated confidential-client engagement using public/open data. Stake
 
 ## Problem and commission
 
-Credit risk leaders need a transparent way to compare risk screening policies and review burdens. An old, deliberately sampled credit dataset can support a learning exercise, but cannot establish modern population default rates, calibrated lending probabilities or a production approval policy.
+The lender's risk team must compare a conservative referral policy with a policy that sends fewer low-risk cases for manual review. Missed bad-credit cases and unnecessary referrals have different consequences, so accuracy alone cannot decide the policy. The historical sample is intentionally enriched with bad credits and uses corrected coding; treating it as today's applicant population would produce an unjustified lending policy.
 
 > Recommend a human-reviewed risk-screening prototype and identify evidence required before any modern lending pilot.
+
+## Practical use case and business outputs
+
+At model-risk review, the Head of Credit Risk compares transparent screening thresholds under three assumed error-cost ratios, examines bad-credit recall and good-credit referral burden, and decides whether to retain a manual baseline or commission modern validation.
+
+| Deliverable | What the team must hand over | Required contents |
+| --- | --- | --- |
+| D5 | Corrected credit data and outcome audit | Original-to-English dictionary, kredit mapping, sample class counts, transformed-amount notice and sensitive-field/availability register. |
+| D6 | Explainable risk-screening comparison | Constant baseline and regularised logistic candidate; train/validation/test manifest; bad-event precision/recall, balanced accuracy, false referrals and coefficient/explanation report. |
+| D7 | Three cost-sensitive referral policies | Threshold comparison for FN:FP=1:1, 3:1 and 5:1; confusion matrices, review share, cost and policy recommendation for each. |
+| D8 | Credit-risk review dashboard | Sample quality, model/cost comparison, review burden and supported subgroup diagnostics with uncertainty. |
+| D11 | Model-risk recommendation and validation plan | Recommend retain baseline, revise prototype or seek modern pilot; identify modern representative data, fairness/legal review, calibration and operational controls required. |
+
+## Required success contract
+
+| Success ID | Required deliverable | Specific pass condition |
+| --- | --- | --- |
+| SC1 | D5 — Corrected credit data and outcome audit | kredit=0 maps to bad_event=1; totals show 300 bad/700 good before any exclusions; no sex reconstructed from famges and no current monetary exposure invented. |
+| SC2 | D6 — Explainable risk-screening comparison | Holdout is untouched until threshold lock; all classes/counts visible; no sampled probability is presented as current population default risk. |
+| SC3 | D7 — Three cost-sensitive referral policies | FN=2/FP=3 at 5:1 costs 13 assumed units; threshold selection uses validation; adverse scores route to human review with override, never automatic denial. |
+| SC4 | D8 — Credit-risk review dashboard | Every subgroup below 30 is labelled insufficient evidence; reviewer finds a missed-bad case and an unnecessary-referral case and traces their policy outcomes. |
+| SC5 | D11 — Model-risk recommendation and validation plan | No regulatory compliance/fairness certification; three next actions each have owner, required evidence and acceptance gate before any real lending use. |
+
+[Detailed acceptance](ACCEPTANCE_CRITERIA.md) defines executed evidence; [deliverables](DELIVERABLES.md) defines exact artefacts and ownership. G1 records simulated sponsor approval, not invented real-client agreement.
 
 ## Core scope
 

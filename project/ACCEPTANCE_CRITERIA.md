@@ -10,14 +10,79 @@ Acceptance requires executed evidence, not headings. Credit Model Risk Analyst r
 | AC2 | D2 | Every required file/field is verified and approved; unsupported requirements explicitly block G1. |
 | AC3 | D3 | Input=retained+excluded+quarantined exactly; no unexplained join multiplication; clean-run instructions exist. |
 | AC4 | D4 | Every treatment has affected count, reason, owner and reviewer; no silent row loss or coercion. |
-| AC5 | D5 | All seven reviewed; K1–K5 reconcile independently and in BI on full cohort and one filtered slice. |
-| AC6 | D6 | Baseline and alternative results, population/class counts, uncertainty, negative findings and feature/timing audit retained; no test-driven tuning. |
-| AC7 | D7 | Both policies and sensitivity outputs supplied; every action has evidence, eligibility, owner, next review and uncertainty. Include a defer case. |
-| AC8 | D8 | Five metric/filter checks pass; frozen scope and limitations survive export; static copy/user guide require no paid access. |
+| AC5 | D5 / SC1 | kredit=0 maps to bad_event=1; totals show 300 bad/700 good before any exclusions; no sex reconstructed from famges and no current monetary exposure invented. |
+| AC6 | D6 / SC2 | Holdout is untouched until threshold lock; all classes/counts visible; no sampled probability is presented as current population default risk. |
+| AC7 | D7 / SC3 | FN=2/FP=3 at 5:1 costs 13 assumed units; threshold selection uses validation; adverse scores route to human review with override, never automatic denial. |
+| AC8 | D8 / SC4 | Every subgroup below 30 is labelled insufficient evidence; reviewer finds a missed-bad case and an unnecessary-referral case and traces their policy outcomes. |
 | AC9 | D9 | All ten tests and three tasks pass; zero unresolved critical/high defects. |
 | AC10 | D10 | Second member reproduces all seven KPIs and policy queue from approved bytes; environment, elapsed time and discrepancies recorded. |
-| AC11 | D11 | Every numeric claim links tested evidence; costs/benefits and operational targets are labelled assumptions unless measured. |
+| AC11 | D11 / SC5 | No regulatory compliance/fairness certification; three next actions each have owner, required evidence and acceptance gate before any real lending use. |
 | AC12 | D12 | All D/AC/DT evidence links resolve at final commit/tag; individual contribution is demonstrated beyond bulk upload or commit count. |
+
+## SC1–SC5 — Business output success contracts
+
+These requirements supplement AC1–AC12 and are mandatory. Record approval at G1, then execute against final outputs. All five require PASS with traceable evidence, or a formally approved scope revision; an unmet model-performance target must be reported as unmet and reflected in the recommendation.
+
+### SC1 / D5 — Corrected credit data and outcome audit
+
+**Accountable delivery role:** Credit Risk Analyst. **Business reviewer:** Head of Credit Risk. **Independent assurance:** Credit Model Risk Analyst.
+
+**Required artefact:** data/curated/corrected-credit-data-and-outcome-audit.csv and docs/05-kpi-catalogue/corrected-credit-data-and-outcome-audit.md.
+
+**Content:** Original-to-English dictionary, kredit mapping, sample class counts, transformed-amount notice and sensitive-field/availability register.
+
+**Pass condition:** kredit=0 maps to bad_event=1; totals show 300 bad/700 good before any exclusions; no sex reconstructed from famges and no current monetary exposure invented.
+
+**Evidence to retain:** actual output at final commit, source/configuration lineage, executed expected-versus-actual checks, reviewer identity/date and PASS/FAIL/BLOCKED. Do not mark complete from document presence alone.
+
+### SC2 / D6 — Explainable risk-screening comparison
+
+**Accountable delivery role:** Data Scientist / Decision Modelling Analyst. **Business reviewer:** Head of Credit Risk. **Independent assurance:** Credit Model Risk Analyst.
+
+**Required artefact:** docs/06-analysis/explainable-risk-screening-comparison.md plus machine-readable evaluation_results.csv.
+
+**Content:** Constant baseline and regularised logistic candidate; train/validation/test manifest; bad-event precision/recall, balanced accuracy, false referrals and coefficient/explanation report.
+
+**Pass condition:** Holdout is untouched until threshold lock; all classes/counts visible; no sampled probability is presented as current population default risk.
+
+**Evidence to retain:** actual output at final commit, source/configuration lineage, executed expected-versus-actual checks, reviewer identity/date and PASS/FAIL/BLOCKED. Do not mark complete from document presence alone.
+
+### SC3 / D7 — Three cost-sensitive referral policies
+
+**Accountable delivery role:** Credit Risk Analyst. **Business reviewer:** Head of Credit Risk. **Independent assurance:** Credit Model Risk Analyst.
+
+**Required artefact:** docs/07-decision-framework/three-cost-sensitive-referral-policies.csv plus policy.md.
+
+**Content:** Threshold comparison for FN:FP=1:1, 3:1 and 5:1; confusion matrices, review share, cost and policy recommendation for each.
+
+**Pass condition:** FN=2/FP=3 at 5:1 costs 13 assumed units; threshold selection uses validation; adverse scores route to human review with override, never automatic denial.
+
+**Evidence to retain:** actual output at final commit, source/configuration lineage, executed expected-versus-actual checks, reviewer identity/date and PASS/FAIL/BLOCKED. Do not mark complete from document presence alone.
+
+### SC4 / D8 — Credit-risk review dashboard
+
+**Accountable delivery role:** BI / Decision Product Developer. **Business reviewer:** Head of Credit Risk. **Independent assurance:** Credit Model Risk Analyst.
+
+**Required artefact:** dashboard/README.md, runnable dashboard/prototype and static review export.
+
+**Content:** Sample quality, model/cost comparison, review burden and supported subgroup diagnostics with uncertainty.
+
+**Pass condition:** Every subgroup below 30 is labelled insufficient evidence; reviewer finds a missed-bad case and an unnecessary-referral case and traces their policy outcomes.
+
+**Evidence to retain:** actual output at final commit, source/configuration lineage, executed expected-versus-actual checks, reviewer identity/date and PASS/FAIL/BLOCKED. Do not mark complete from document presence alone.
+
+### SC5 / D11 — Model-risk recommendation and validation plan
+
+**Accountable delivery role:** Business Analyst / Delivery Lead with domain specialist. **Business reviewer:** Head of Credit Risk. **Independent assurance:** Credit Model Risk Analyst.
+
+**Required artefact:** deliverables/model-risk-recommendation-and-validation-plan.pdf plus editable slides and supporting cards/runbook.
+
+**Content:** Recommend retain baseline, revise prototype or seek modern pilot; identify modern representative data, fairness/legal review, calibration and operational controls required.
+
+**Pass condition:** No regulatory compliance/fairness certification; three next actions each have owner, required evidence and acceptance gate before any real lending use.
+
+**Evidence to retain:** actual output at final commit, source/configuration lineage, executed expected-versus-actual checks, reviewer identity/date and PASS/FAIL/BLOCKED. Do not mark complete from document presence alone.
+
 
 ## DT1–DT10
 
@@ -36,13 +101,13 @@ Acceptance requires executed evidence, not headings. Credit Model Risk Analyst r
 
 Use small synthetic fixtures for edge cases and frozen-source checks where relevant. Clearly distinguish fixture results from measured source outputs. Retain expected/actual evidence in docs/08-assurance-uat/; automate deterministic calculations where practical and document UI/interpretation reviews.
 
-## Three UAT tasks
+## Three project-specific UAT tasks
 
-1. Head of Credit Risk finds K1, explains its denominator, snapshot and limitation.
-2. Credit Risk Analyst compares one baseline/alternative case and records accept/defer/override with rationale.
-3. An operational user traces an action to source evidence and finds the manual review/escalation owner.
+1. **Business review:** At model-risk review, the Head of Credit Risk compares transparent screening thresholds under three assumed error-cost ratios, examines bad-credit recall and good-credit referral burden, and decides whether to retain a manual baseline or commission modern validation. The participant must explain the observed baseline, population and decision limitation without assistance from the author; record actual completion and any defect.
+2. **Policy challenge:** use the D7 artefact to compare a baseline and alternative case, then record accept/defer/override with evidence and accountable owner. The domain reviewer must independently reproduce the case outcome.
+3. **Operational walkthrough:** Every subgroup below 30 is labelled insufficient evidence; reviewer finds a missed-bad case and an unnecessary-referral case and traces their policy outcomes. Retain the task recording/screenshots, expected/actual values and reviewer outcome.
 
-Record participant role, expected/observed result, defect and retest. All three must pass; static exports may support review where interactive access is unavailable.
+All three must pass after defect retest. Static exports may support review if interactive access is unavailable. The independent reviewer also checks every SC output against its declared artefact and source/configuration lineage.
 
 ## Release
 
